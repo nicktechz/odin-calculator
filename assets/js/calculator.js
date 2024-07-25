@@ -167,35 +167,37 @@ const operate = () => {
   if (operator === "+") {
     result =
       parseFloat(firstOperand.join("")) + parseFloat(secondOperand.join(""));
-    calcDisplay.textContent = result;
     firstOperand = [result];
     secondOperand = [];
+    return updateDisplay([result]);
   } else if (operator === "-") {
     result =
       parseFloat(firstOperand.join("")) - parseFloat(secondOperand.join(""));
-    calcDisplay.textContent = result;
     firstOperand = [result];
     secondOperand = [];
+    return updateDisplay([result]);
   } else if (operator === "*") {
     result =
       parseFloat(firstOperand.join("")) * parseFloat(secondOperand.join(""));
-    calcDisplay.textContent = result;
     firstOperand = [result];
     secondOperand = [];
+    return updateDisplay([result]);
   } else if (operator === "/") {
     result =
       parseFloat(firstOperand.join("")) / parseFloat(secondOperand.join(""));
-    calcDisplay.textContent = result;
     firstOperand = [result];
     secondOperand = [];
+    return updateDisplay([result]);
+    s;
   } else if (operator === "%") {
     result =
       (parseFloat(firstOperand.join("")) / 100) *
       parseFloat(secondOperand.join(""));
-    calcDisplay.textContent = result;
     firstOperand = [result];
     secondOperand = [];
+    return updateDisplay([result]);
   }
+  console.log(result);
 };
 
 document.addEventListener("keydown", (e) => {
@@ -234,7 +236,11 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key === "/") {
     operator = "/";
     divisionBtn.style.backgroundColor = "#eab20882";
+  } else if (e.key === "%") {
+    operator = "%";
+    percentageBtn.style.backgroundColor = "#eab20882";
   } else if (e.key === "Enter") {
+    e.preventDefault();
     operate();
   }
 });
