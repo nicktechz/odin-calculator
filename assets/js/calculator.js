@@ -69,9 +69,10 @@ const checkMaxNumbers = (array) => {
   }
 };
 const updateDisplay = (array) => {
-  console.log(operator);
   if (array[0] === 0) {
     array.splice(-1, 1);
+    return (calcDisplay.textContent = 0);
+  } else if (array.length === 0) {
     return (calcDisplay.textContent = 0);
   }
   calcDisplay.textContent = array.join("");
@@ -196,9 +197,7 @@ const operate = () => {
     secondOperand = [];
   }
 };
-resultBtn.addEventListener("click", () => {
-  operate();
-});
+
 document.addEventListener("keydown", (e) => {
   if (e.key === "Backspace" || e.key === "Delete") {
     deleteNumber();
@@ -238,4 +237,8 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key === "Enter") {
     operate();
   }
+});
+
+resultBtn.addEventListener("click", () => {
+  operate();
 });
