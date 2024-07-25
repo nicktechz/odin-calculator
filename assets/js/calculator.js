@@ -261,6 +261,9 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key === "9") {
     arrayChooser(parseInt(e.key));
   } else if (e.key === "0") {
+  } else if (e.key === ".") {
+    arrayChooser(e.key);
+  } else if (e.key === "0") {
     arrayChooser(parseInt(e.key));
   } else if (e.key === "+") {
     operator = "+";
@@ -280,6 +283,8 @@ document.addEventListener("keydown", (e) => {
   } else if (e.key === "Enter") {
     e.preventDefault();
     operate();
+  } else if (e.key === "z") {
+    clearScreen();
   }
 });
 
