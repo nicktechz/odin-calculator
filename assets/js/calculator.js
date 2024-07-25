@@ -169,35 +169,73 @@ const operate = () => {
       parseFloat(firstOperand.join("")) + parseFloat(secondOperand.join(""));
     firstOperand = [result];
     secondOperand = [];
-    return updateDisplay([result]);
+    console.log([result]);
+    if (isNaN(result)) {
+      calcDisplay.textContent = "ERROR!";
+      setTimeout(function () {
+        clearScreen();
+      }, 500);
+    } else {
+      return updateDisplay([result]);
+    }
   } else if (operator === "-") {
     result =
       parseFloat(firstOperand.join("")) - parseFloat(secondOperand.join(""));
     firstOperand = [result];
     secondOperand = [];
-    return updateDisplay([result]);
+    console.log(result);
+    if (isNaN(result)) {
+      calcDisplay.textContent = "ERROR!";
+      setTimeout(function () {
+        clearScreen();
+      }, 500);
+    } else {
+      return updateDisplay([result]);
+    }
   } else if (operator === "*") {
     result =
       parseFloat(firstOperand.join("")) * parseFloat(secondOperand.join(""));
     firstOperand = [result];
     secondOperand = [];
-    return updateDisplay([result]);
+    console.log(result);
+    if (isNaN(result)) {
+      calcDisplay.textContent = "ERROR!";
+      setTimeout(function () {
+        clearScreen();
+      }, 500);
+    } else {
+      return updateDisplay([result]);
+    }
   } else if (operator === "/") {
     result =
       parseFloat(firstOperand.join("")) / parseFloat(secondOperand.join(""));
     firstOperand = [result];
     secondOperand = [];
-    return updateDisplay([result]);
-    s;
+    console.log([result]);
+    if (isNaN(result)) {
+      calcDisplay.textContent = "ERROR!";
+      setTimeout(function () {
+        clearScreen();
+      }, 500);
+    } else {
+      return updateDisplay([result]);
+    }
   } else if (operator === "%") {
     result =
       (parseFloat(firstOperand.join("")) / 100) *
       parseFloat(secondOperand.join(""));
     firstOperand = [result];
     secondOperand = [];
-    return updateDisplay([result]);
+    console.log(result);
+    if (isNaN(result)) {
+      calcDisplay.textContent = "ERROR!";
+      setTimeout(function () {
+        clearScreen();
+      }, 500);
+    } else {
+      return updateDisplay([result]);
+    }
   }
-  console.log(result);
 };
 
 document.addEventListener("keydown", (e) => {
